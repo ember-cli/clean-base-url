@@ -1,14 +1,18 @@
 "use strict";
-var assert = require('assert');
 var cleanBaseURL = require('.');
+var expect = require('chai').expect;
 
-assert(cleanBaseURL('') === '/');
-assert(cleanBaseURL('/') === '/');
-assert(cleanBaseURL('ember') === '/ember/');
-assert(cleanBaseURL('/ember') === '/ember/');
-assert(cleanBaseURL('ember/') === '/ember/');
-assert(cleanBaseURL('/ember/') === '/ember/');
-assert(cleanBaseURL('ember/hamsters') === '/ember/hamsters/');
-assert(cleanBaseURL('/ember/hamsters/') === '/ember/hamsters/');
-assert(cleanBaseURL('app://localhost') === 'app://localhost/');
-assert(cleanBaseURL('app://localhost/') === 'app://localhost/');
+describe('clean-base-url', function () {
+  it('handles common scenarios', function(){
+    expect(cleanBaseURL('')).to.equal('/');
+    expect(cleanBaseURL('/')).to.equal('/');
+    expect(cleanBaseURL('ember')).to.equal('/ember/');
+    expect(cleanBaseURL('/ember')).to.equal('/ember/');
+    expect(cleanBaseURL('ember/')).to.equal('/ember/');
+    expect(cleanBaseURL('/ember/')).to.equal('/ember/');
+    expect(cleanBaseURL('ember/hamsters')).to.equal('/ember/hamsters/');
+    expect(cleanBaseURL('/ember/hamsters/')).to.equal('/ember/hamsters/');
+    expect(cleanBaseURL('app://localhost')).to.equal('app://localhost/');
+    expect(cleanBaseURL('app://localhost/')).to.equal('app://localhost/');
+  });
+});

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "istanbul cover mocha test"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/stefanpenner/clean-base-url/issues"
   },
-  "homepage": "https://github.com/stefanpenner/clean-base-url#readme"
+  "homepage": "https://github.com/stefanpenner/clean-base-url#readme",
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "istanbul": "^0.3.14",
+    "mocha": "^2.2.5"
+  }
 }
