@@ -1,5 +1,6 @@
 "use strict";
-var cleanBaseURL = require('.');
+
+var cleanBaseURL = require('./');
 var expect = require('chai').expect;
 
 describe('clean-base-url', function () {
