@@ -1,1 +1,1 @@
-# clean-base-url [![Build Status](https://travis-ci.org/ember-cli/clean-base-url.svg)](https://travis-ci.org/ember-cli/clean-base-url)
+# clean-base-url [![Build Status](https://travis-ci.org/ember-cli/clean-base-url.svg)](https://travis-ci.org/ember-cli/clean-base-url) [![Greenkeeper badge](https://badges.greenkeeper.io/ember-cli/clean-base-url.svg)](https://greenkeeper.io/)
