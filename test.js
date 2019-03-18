@@ -16,4 +16,17 @@ describe('clean-base-url', function () {
     expect(cleanBaseURL('app://localhost')).to.equal('app://localhost/');
     expect(cleanBaseURL('app://localhost/')).to.equal('app://localhost/');
   });
+
+  it('creates relative URLs if configured', function(){
+    expect(cleanBaseURL('', true)).to.equal('/');
+    expect(cleanBaseURL('/', true)).to.equal('/');
+    expect(cleanBaseURL('ember', true)).to.equal('ember/');
+    expect(cleanBaseURL('/ember', true)).to.equal('/ember/');
+    expect(cleanBaseURL('ember/', true)).to.equal('ember/');
+    expect(cleanBaseURL('/ember/', true)).to.equal('/ember/');
+    expect(cleanBaseURL('ember/hamsters', true)).to.equal('ember/hamsters/');
+    expect(cleanBaseURL('/ember/hamsters/', true)).to.equal('/ember/hamsters/');
+    expect(cleanBaseURL('app://localhost', true)).to.equal('app://localhost/');
+    expect(cleanBaseURL('app://localhost/', true)).to.equal('app://localhost/');
+  });
 });
