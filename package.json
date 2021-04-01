@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/stefanpenner/clean-base-url#readme",
   "devDependencies": {
-    "chai": "^4.3.0",
+    "chai": "^4.3.4",
     "istanbul": "^0.4.5",
     "mocha": "^6.2.2"
   }
