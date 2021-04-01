@@ -2,7 +2,7 @@
 
 var url = require('url');
 
-module.exports = function(baseURL) {
+module.exports = function(baseURL, allowRelativeURL) {
   // return undefined if not a string or empty string
   if (typeof baseURL !== 'string') { return; }
 
@@ -10,7 +10,7 @@ module.exports = function(baseURL) {
   if (baseURL[baseURL.length - 1] !== '/') { baseURL = baseURL + '/'; }
 
   var parsedURL = url.parse(baseURL);
-  if (parsedURL.path[0] !== '/') {
+  if (parsedURL.path[0] !== '/' && !allowRelativeURL) {
     parsedURL.path = '/' + parsedURL.path;
   }
 
